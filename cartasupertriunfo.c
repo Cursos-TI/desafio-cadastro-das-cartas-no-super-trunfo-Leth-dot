@@ -98,7 +98,7 @@ int main(){
     printf("PIB per capita: %.2f reais\n", pibpp2); 
     printf("Super Poder: %.2f\n", superpoder2);
 
-    //nivel novato - nivel mestre - comparacao simples das cartas 
+    //nivel mestre - comparacao simples das cartas 
     printf("\n");
     printf("- Quem venceu? Se apareceu o digito 1, parabens, o Jogador 01 venceu! Se apareceu o digito 0, parabens, o Jogador 02 venceu!-\n\n");
 
