@@ -97,36 +97,20 @@ int main(){
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per capita: %.2f reais\n", pibpp2); 
     printf("Super Poder: %.2f\n", superpoder2);
+    printf("\n\n");
 
-    //nivel mestre - comparacao simples das cartas 
-    printf("\n");
-    printf("- Quem venceu? Se apareceu o digito 1, parabens, o Jogador 01 venceu! Se apareceu o digito 0, parabens, o Jogador 02 venceu!-\n\n");
-
-    vencedorH = populacao1 > populacao2; 
-    printf("Numero de Habitantes: %d\n", vencedorH); 
-
-    vencedorA = area1 > area2; 
-    printf("Area: %d\n", vencedorA); 
-
-    vencedorP = pib1 > pib2; 
-    printf("PIB: %d\n", vencedorP); 
-
-    vencedorT = turisticos1 > turisticos2; 
-    printf("Numero de Pontos Turisticos: %d\n", vencedorT); 
-
-    vencedorD = densidade1 < densidade2; 
-    printf("Densidade Populacional: %d\n", vencedorD); 
-
-    vencedorPP = pibpp1 > pibpp2; 
-    printf("PIB per capita: %d\n", vencedorPP); 
-
-    vencedorS = superpoder1 > superpoder2; 
-    printf("Super Poder: %d\n", vencedorS); 
-
+    //nivel novato do tema 3 - deletei a antiga comparacao para adicionar o codigo adequado - comparacao de apenas um atributo
+    printf("Quem venceu? O maior PIB sera indicado como vencedor!\n");
     
-    printf("\nFim de Jogo! Parabens aos vencedores!");
+    if (pib1 > pib2) 
+    {
+        printf("Carta 1 venceu!\n");
+    } else {
+        printf("Carta 2 venceu!\n");
+    }
+
 
 
     return 0;
-    
+
 }
