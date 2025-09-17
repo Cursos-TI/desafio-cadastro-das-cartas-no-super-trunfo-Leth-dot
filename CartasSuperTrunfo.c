@@ -1,22 +1,132 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
 
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+int main(){
+
+    //nivel novato - iniciando inserçao das variaveis de ambas cartas; cada carta possui sua variavel para evitar que o resultado do primeiro sobescreva o segundo
+    char estado1, estado2, codigo1[20], codigo2[20], nome1[20], nome2[20];
+    float area1, area2, pib1, pib2, pibpp1, pibpp2, densidade1, densidade2;
+    float superpoder1, superpoder2; 
+    int turisticos1, turisticos2;
+    int vencedorH, vencedorA, vencedorP, vencedorT, vencedorD, vencedorPP, vencedorS; //nivel mestre - variaveis dos resultados da comparacao simples das cartas
+    unsigned long int populacao1, populacao2;
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
+
+    //nives novato - iniciando entrada e saida de dados; carta 01a
+    printf("- Carta 01 -\n");
+    printf("Represente seu Estado com uma letra de 'A' a 'H': ");
+    scanf(" %c", &estado1); 
+
+    printf("Represente seu Codigo com a letra de seu Estado e um numero de '01' a '04': ");
+    scanf(" %s", codigo1); 
+
+    printf("Represente o Nome de sua Cidade: ");
+    scanf(" %s", nome1);
+
+    printf("Represente o Numero de Habitantes de sua Cidade: ");
+    scanf(" %ld", &populacao1);
+
+    printf("Represente o valor da Area de sua Cidade: ");
+    scanf(" %f", &area1);
+
+    printf("Represente o PIB de sua Cidade: "); 
+    scanf(" %f", &pib1);
+
+    printf("Represente o Numero de Pontos Turisticos de sua Cidade: ");
+    scanf(" %d", &turisticos1); 
+
+    //nivel aventureiro - atribuicoes as variaveis anteriores para o calculo de pib per capita e densidade - carta 01
+    pibpp1 = pib1 / populacao1;
+    densidade1 = populacao1 / area1; 
+    //nivel mestre - atribuicao a variavel superpoder1 para ter a soma dos numeros escolhidos pelo usuario (com o inverso da densidade) - carta 01
+    superpoder1 = (float) (populacao1 + area1 + pib1 + turisticos1 + pibpp1) - densidade1;
+     
+
+    //nivel novato - iniciando processo de impressao dos dados; carta 01
+    printf("\n");
+    printf("Estado: %c\n", estado1);
+    printf("Codigo: %s\n", codigo1);
+    printf("Nome da Cidade: %s\n", nome1);
+    printf("Numero de Habitantes: %ld\n", populacao1);
+    printf("Area: %.2f km²\n", area1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Numero de Pontos Turisticos: %d\n", turisticos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per capita: %.2f reais\n", pibpp1); 
+    printf("Super Poder: %.2f\n", superpoder1); 
+
+
+    //nivel novato - iniciando entrada e saida de dados; carta 02
+    printf("\n- Carta 02 -\n");
+    printf("Represente seu Estado com uma letra de 'A' a 'H': ");
+    scanf(" %c", &estado2); 
+
+    printf("Represente seu Codigo com a letra de seu Estado e um numero de '01' a '04': ");
+    scanf(" %s", codigo2); 
+
+    printf("Represente o Nome de sua Cidade: ");
+    scanf(" %s", nome2);
+
+    printf("Represente o Numero de Habitantes de sua Cidade: ");
+    scanf(" %ld", &populacao2);
+
+    printf("Represente o valor da Area de sua Cidade: ");
+    scanf(" %f", &area2);
+
+    printf("Represente o PIB de sua Cidade: "); 
+    scanf(" %f", &pib2);
+
+    printf("Represente o Numero de Pontos Turisticos de sua Cidade: ");
+    scanf(" %d", &turisticos2); 
+
+    //nivel aventureiro - atribuicoes as variaveis anteriores para o calculo de pib per capita e densidade - carta 02
+    pibpp2 = pib2 / populacao2;
+    densidade2 = populacao2 / area2; 
+    //nivel mestre - atribuicao a variavel superpoder1 para ter a soma dos numeros escolhidos pelo usuario (com o inverso da densidade) - carta 02
+    superpoder2 = (float) (populacao2 + area2 + pib2 + turisticos2 + pibpp2) - densidade2;
+
+    //nivel novato - iniciando processo de impressao dos dados; carta 02
+    printf("\n");
+    printf("Estado: %c\n", estado2);
+    printf("Codigo: %s\n", codigo2);
+    printf("Nome da Cidade: %s\n", nome2);
+    printf("Numero de Habitantes: %ld\n", populacao2);
+    printf("Area: %.2f km²\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Numero de Pontos Turisticos: %d\n", turisticos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per capita: %.2f reais\n", pibpp2); 
+    printf("Super Poder: %.2f\n", superpoder2);
+
+    //nivel mestre - comparacao simples das cartas 
+    printf("\n");
+    printf("- Quem venceu? Se apareceu o digito 1, parabens, o Jogador 01 venceu! Se apareceu o digito 0, parabens, o Jogador 02 venceu!-\n\n");
+
+    vencedorH = populacao1 > populacao2; 
+    printf("Numero de Habitantes: %d\n", vencedorH); 
+
+    vencedorA = area1 > area2; 
+    printf("Area: %d\n", vencedorA); 
+
+    vencedorP = pib1 > pib2; 
+    printf("PIB: %d\n", vencedorP); 
+
+    vencedorT = turisticos1 > turisticos2; 
+    printf("Numero de Pontos Turisticos: %d\n", vencedorT); 
+
+    vencedorD = densidade1 < densidade2; 
+    printf("Densidade Populacional: %d\n", vencedorD); 
+
+    vencedorPP = pibpp1 > pibpp2; 
+    printf("PIB per capita: %d\n", vencedorPP); 
+
+    vencedorS = superpoder1 > superpoder2; 
+    printf("Super Poder: %d\n", vencedorS); 
+
     
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    printf("\nFim de Jogo! Parabens aos vencedores!");
+
 
     return 0;
+    
 }
